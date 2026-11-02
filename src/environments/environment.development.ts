@@ -1,0 +1,4 @@
+export const environment = {
+    "apiUrl": "http://localhost:5150/api/v1"
+};
+
