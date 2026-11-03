@@ -1,3 +1,54 @@
-<h4>SEJA BEM VINDO AO SISTEMA DE GERENCIAMENTO DE CLIENTES</h4>
-<p>Este sistema foi desenvolvido para auxiliar na gestão de clientes, permitindo o cadastro, consulta e atualização de informações de forma eficiente e organizada.</p>
-<hr/>
+<section class="dashboard container py-5">
+
+  <!-- Cabeçalho -->
+  <header class="dash-header text-center mb-5">
+    <span class="dash-tag">Painel de Controle</span>
+    <h1 class="dash-titulo">Bem-vindo ao WebClientes</h1>
+    <p class="dash-subtitulo">
+      Sistema para cadastro e consulta de clientes.
+      Use o menu ou os atalhos abaixo para começar.
+    </p>
+  </header>
+
+  <!-- Indicador principal -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-6 col-lg-4">
+      <div class="dash-card dash-card-destaque text-center">
+        <span class="dash-card-label">Clientes cadastrados</span>
+
+        <!-- Substituir "—" pelo valor real quando a contagem estiver disponível -->
+        <h2 class="dash-contador">{{ quantidadeClientes() ?? '—' }}</h2>
+
+        <small class="dash-info">
+         {{ quantidadeClientes() === null ? 'Carregando dados...' : 'Total registrado no sistema' }}
+        </small>
+    </div>
+  </div>
+</div>
+
+  <!-- Atalhos / explicação -->
+  <div class="row g-4">
+    <div class="col-md-6">
+      <a href="cadastro-clientes" class="dash-card dash-link d-block h-100">
+        <span class="dash-icone">＋</span>
+        <h3 class="dash-card-titulo">Cadastrar Clientes</h3>
+        <p class="dash-card-texto">
+          Registre novos clientes no sistema preenchendo o formulário de cadastro.
+        </p>
+        <span class="dash-acao">Acessar →</span>
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <a href="consulta-clientes" class="dash-card dash-link d-block h-100">
+        <span class="dash-icone">⌕</span>
+        <h3 class="dash-card-titulo">Consultar Clientes</h3>
+        <p class="dash-card-texto">
+          Visualize a lista de clientes cadastrados e pesquise os registros existentes.
+        </p>
+        <span class="dash-acao">Acessar →</span>
+      </a>
+    </div>
+  </div>
+
+</section>

@@ -8,22 +8,38 @@
          <input type = "text" class = "form-control" placeholder =
          "Digite o nome do cliente"
          formControlName = "nome"/>
+         @if (formCadastro.get('nome')?.touched && formCadastro.get('nome')?.invalid) {
+            <div class = "text-danger">
+                O nome do cliente é obrigatório e deve ter no mínimo 6 caracteres.
+            </div>
+         }
 
   </div>
  <div class = "mb-3">
           <label>CPF:</label>
           <input type ="text" class = "form-control" placeholder ="Digite o CPF do cliente"
           formControlName = "cpf"/>
+          @if (formCadastro.get('cpf')?.touched && formCadastro.get('cpf')?.invalid) {
+            <div class = "text-danger">
+                O CPF do cliente é obrigatório e deve conter exatamente 11 dígitos numéricos.
+            </div>
+          }
  </div>
  <div class = "mb-3">
           <label>Email:</label>
           <input type ="text" class = "form-control" placeholder ="Digite o email do cliente"
           formControlName = "email"/>
+          @if (formCadastro.get('email')?.touched && formCadastro.get('email')?.invalid) {
+            <div class = "text-danger">
+                O email do cliente é obrigatório e deve ser um email válido.
+            </div>
+          }
 </div>
 
 <div class = "mb-3">
 
-    <input type = "submit" class = "btn btn-success shadow" value = "Realizar cadastro"/>
+    <input type = "submit" class = "btn btn-success shadow" value = "Realizar cadastro"
+      [disabled]="formCadastro.invalid"/>
 
 </div>
 
